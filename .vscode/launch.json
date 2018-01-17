@@ -1,0 +1,40 @@
+{
+    // Utilizar IntelliSense para aprender acerca de los posibles atributos.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos 
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Vertical Test",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/lib/retinator.rb",
+            "args": [
+                "${workspaceRoot}/test/vertical.jpg",
+                "150"
+            ]
+        },
+        {
+            "name": "Run Horizontal Test",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/lib/retinator.rb",
+            "args": [
+                "${workspaceRoot}/test/horizontal.jpg",
+                "150"
+            ]
+        },
+        {
+            "name": "Run Help Test",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/lib/retinator.rb",
+            "args": [
+                "--help"
+            ]
+        }
+    ]
+}

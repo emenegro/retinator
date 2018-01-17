@@ -1,0 +1,8 @@
+OUTPUT_MAX_SCALE = 3
+OUTPUT_FORMAT = "png"
+OUTPUTS = [
+  # [RESOLUTION MULTIPLIER, FILE SUFFIX]
+  [1, ""], 
+  [2, "@2x"], 
+  [3, "@3x"]
+]

@@ -1,0 +1,26 @@
+PATH
+  remote: .
+  specs:
+    retinator (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    colorize (0.8.1)
+    mini_magick (4.8.0)
+    minitest (5.11.1)
+    rake (10.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.16)
+  colorize
+  mini_magick
+  minitest (~> 5.0)
+  rake (~> 10.0)
+  retinator!
+
+BUNDLED WITH
+   1.16.1
