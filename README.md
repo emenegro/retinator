@@ -19,3 +19,11 @@ Example:"
     test@2x.png (800x400)"
     test@3x.png (1200x600)"
 ```
+
+## Installation
+
+```
+bundle install
+gem build retinator.gemspec
+gem install retinator-[VERSION].gem
+```
