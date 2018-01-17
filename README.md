@@ -23,6 +23,7 @@ Example:"
 ## Installation
 
 ```
+brew install graphicsmagick
 bundle install
 gem build retinator.gemspec
 gem install retinator-[VERSION].gem
