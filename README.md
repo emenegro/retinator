@@ -2,6 +2,8 @@
 
 Retinator resizes the source image and generates three images in @1x, @2x and @3x iOS resolutions.
 
+![retinator-gif](etc/retinator.gif)
+
 ## Usage
 
 ```        
@@ -22,8 +24,15 @@ Example:"
 
 ## Installation
 
+This gem needs ImageMagick or GraphicksMagick in order to run. It has to be installed using a [brew](https://brew.sh) formula. Run this command in your terminal:
+
 ```
 brew install graphicsmagick
+```
+
+After that you can install the tool the usual way:
+
+```
 bundle install
 gem build retinator.gemspec
 gem install retinator-[VERSION].gem
