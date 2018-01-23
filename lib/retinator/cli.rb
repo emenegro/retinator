@@ -2,24 +2,18 @@ module Cli
   class << self
     def get_image_path(args)
       path = args[0]
-      if !path
-        puts "Error, image full path needed".red 
-        exit(1)
-      elsif !File.exists? path
-        puts "Error, no file found at '#{image_path}".red
-        exit(1)
+      if !File.exist? path
+        puts "Error, no file found at '#{path}'".red
+        return nil
       end
       return path
     end
 
     def get_destination_resolution(args)
       res = args[1].to_i
-      if !res
-        puts "Error, destination resolution needed in pixels".red 
-        exit(1)
-      elsif res == 0
+      if res == 0
         puts "Error, destination resolution has to be a number greater than 0".red 
-        exit(1)
+        return nil
       end
       return res
     end
@@ -43,8 +37,9 @@ module Cli
         puts "       test.png    (400x200)"
         puts "       test@2x.png (800x400)"
         puts "       test@3x.png (1200x600)"
-        exit(1)
+        return true
       end
+      return false
     end
   end
 end
