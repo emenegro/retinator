@@ -9,7 +9,7 @@
             "type": "Ruby",
             "request": "launch",
             "cwd": "${workspaceRoot}",
-            "program": "${workspaceRoot}/lib/retinator.rb",
+            "program": "${workspaceRoot}/bin/retinator",
             "args": [
                 "${workspaceRoot}/test/vertical.jpg",
                 "150"
@@ -20,7 +20,7 @@
             "type": "Ruby",
             "request": "launch",
             "cwd": "${workspaceRoot}",
-            "program": "${workspaceRoot}/lib/retinator.rb",
+            "program": "${workspaceRoot}/bin/retinator",
             "args": [
                 "${workspaceRoot}/test/horizontal.jpg",
                 "150"
@@ -31,10 +31,7 @@
             "type": "Ruby",
             "request": "launch",
             "cwd": "${workspaceRoot}",
-            "program": "${workspaceRoot}/lib/retinator.rb",
-            "args": [
-                "--help"
-            ]
+            "program": "${workspaceRoot}/bin/retinator"
         }
     ]
 }

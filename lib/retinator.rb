@@ -1,15 +1,44 @@
+require "mini_magick"
 require "colorize"
 require_relative "retinator/version"
-require_relative "retinator/cli"
-require_relative "retinator/resizer"
+require_relative "retinator/config"
+require_relative "retinator/utils"
 
 module Retinator
-  if !Cli.show_help_if_needed(ARGV)
-    path = Cli.get_image_path(ARGV)
-    res = Cli.get_destination_resolution(ARGV)
-    unless path && res
-      exit(1)
+  class << self
+    def generate(path, res)
+      return false unless path && res
+      show_dimension_hint_if_needed(path, res)
+      name = Utils.filename(path)
+      OUTPUTS.each do |config|
+        scale = config[0]
+        suffix = config[1]
+        filename = "#{name}#{suffix}.#{OUTPUT_FORMAT}"
+        puts "Generating #{filename}..."
+        image = resize(path, res * scale)
+        save_file(image, filename, OUTPUT_FORMAT)
+      end
+      puts "Done!".green
+      return true
     end
-    Resizer.generate(path, res)
+
+    private def show_dimension_hint_if_needed(path, res)
+      image = MiniMagick::Image.open(path)
+      smaller_dimensions = image.dimensions.select { |d| d <= res * OUTPUT_MAX_SCALE}
+      if !smaller_dimensions.empty?
+        puts "[!] Size of the source image is smaller than the destination resolution".yellow
+        puts "    Result images could be pixelated".yellow
+      end
+    end
+
+    private def resize(path, res)
+      image = MiniMagick::Image.open(path)
+      return image.resize("#{res}x#{res}^")
+    end
+
+    private def save_file(image, filename, format)
+      image.format(format)
+      image.write(filename)
+    end
   end
 end

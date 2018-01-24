@@ -1,3 +1,43 @@
 #!/usr/bin/env ruby
 
 require "retinator"
+require "colorize"
+require "optparse"
+
+options = {}
+option_parser = OptionParser.new do |opts|
+  opts.banner = "Usage: #{File.basename($PROGRAM_NAME)} source_image destination_resolution
+
+Retinator resizes the source image and generates
+three images in @1x, @2x and @3x iOS resolutions
+
+- source_image: path to the source image
+- destination_resolution: a number indicating the minimum resolution
+  of the smaller dimension of the destination @1x image
+  
+Example: for an input image of 3000x1500, 'retinator test.jpg 200' will output:
+  test.png    (400x200)
+  test@2x.png (800x400)
+  test@3x.png (1200x600)
+  "
+end
+option_parser.parse!
+
+if ARGV.count != 2
+  puts option_parser
+  exit(1)
+end
+
+file = ARGV.shift
+if !File.exist? file
+  puts "Error, no file found at '#{file}'".red
+  exit(1)
+end
+
+res = ARGV.shift.to_i
+if res <= 0
+  puts "Error, destination resolution has to be a number greater than 0".red 
+  exit(1)
+end
+
+Retinator.generate(file, res)
