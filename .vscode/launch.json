@@ -32,6 +32,34 @@
             "request": "launch",
             "cwd": "${workspaceRoot}",
             "program": "${workspaceRoot}/bin/retinator"
+        },
+        {
+            "name": "No Arguments Test",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/bin/retinator"
+        },
+        {
+            "name": "Wrong Flag Test",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/bin/retinator",
+            "args": [
+                "-l"
+            ]
+        },
+        {
+            "name": "Wrong Arguments Test",
+            "type": "Ruby",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/bin/retinator",
+            "args": [
+                "nofile",
+                "200"
+            ]
         }
     ]
 }
