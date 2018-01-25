@@ -1,4 +1,4 @@
-# Retinator
+# Retinator [![Build Status](https://travis-ci.org/emenegro/retinator.svg?branch=master)](https://travis-ci.org/emenegro/retinator)
 
 Retinator resizes the source image and generates three images in @1x, @2x and @3x iOS resolutions.
 
@@ -39,3 +39,7 @@ bundle install
 gem build retinator.gemspec
 gem install retinator-[VERSION].gem
 ```
+
+## TODO
+
+- Allow batch processing
