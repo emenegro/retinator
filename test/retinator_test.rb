@@ -2,14 +2,15 @@ require "test_helper"
 require "fileutils"
 
 class RetinatorTest < Minitest::Test
-  TEST_IMAGE = "test/vertical.jpg"
+  TEST_IMAGE_NAME = "vertical"
+  TEST_IMAGE = "test/#{TEST_IMAGE_NAME}.jpg"
 
   def setup
     $stdout = StringIO.new # Avoid console output while testing
   end
 
   def teardown
-    ["vertical.png", "vertical@2x.png", "vertical@3x.png"].each do |file|
+    ["#{TEST_IMAGE_NAME}.png", "#{TEST_IMAGE_NAME}@2x.png", "#{TEST_IMAGE_NAME}@3x.png"].each do |file|
       FileUtils.rm file if File.exist? file
     end
   end
