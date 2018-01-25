@@ -8,7 +8,7 @@ require_relative "retinator/utils"
 module Retinator
   class << self
     def generate(path, res)
-      return false unless path && res
+      return false unless check_params path, res
       show_dimension_hint_if_needed path, res
       generate_images path, res
       return true
@@ -19,6 +19,14 @@ module Retinator
         FileUtils.rm file
       end
       @saved_files.clear
+    end
+
+    private def check_params(path, res)
+      return false unless path && res
+      return false unless File.exist? path
+      return false unless res.kind_of? Integer
+      return false unless res > 0
+      return true
     end
 
     private def generate_images(path, res)
