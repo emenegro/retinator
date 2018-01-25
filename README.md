@@ -35,6 +35,12 @@ brew install graphicsmagick
 After that you can install the tool the usual way:
 
 ```
+gem install retinator
+```
+
+Or, in dev mode:
+
+```
 bundle install
 gem build retinator.gemspec
 gem install retinator-[VERSION].gem
