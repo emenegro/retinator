@@ -20,9 +20,9 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_runtime_dependency "colorize", "~> 0.8.1"
+  spec.add_runtime_dependency "mini_magick", "~> 4.8"
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
-  spec.add_dependency "colorize", "~> 0.8.1"
-  spec.add_dependency "mini_magick", "~> 4.8"
 end
