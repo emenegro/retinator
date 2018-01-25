@@ -7,12 +7,11 @@ Retinator resizes the source image and generates three images in @1x, @2x and @3
 ## Usage
 
 ```        
-retinator [source_image] [destination_resolution]
-retinator --help
+retinator source_image destination_resolution
 ```
 
-- `[source_image]`: path to the source image
-- `[destination_resolution]`: a number indicating the resolution of the smaller dimension of the destination @1x image
+- `source_image`: path to the source image
+- `destination_resolution`: a number indicating the resolution of the smaller dimension of the destination @1x image
 
 ### Example
 
