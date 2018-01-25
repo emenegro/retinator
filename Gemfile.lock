@@ -1,7 +1,9 @@
 PATH
   remote: .
   specs:
-    retinator (0.1.0)
+    retinator (0.1.1)
+      colorize (~> 0.8.1)
+      mini_magick (~> 4.8)
 
 GEM
   remote: https://rubygems.org/
@@ -16,8 +18,6 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16)
-  colorize (~> 0.8.1)
-  mini_magick (~> 4.8)
   minitest (~> 5.0)
   rake (~> 10.0)
   retinator!
