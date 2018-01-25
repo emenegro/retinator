@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.version       = Retinator::VERSION
   spec.authors       = ["Mario Negro"]
   spec.email         = ["mario.negro.martin@gmail.com"]
-
   spec.summary       = "Generates @1x, @2x and @3x images versions of an image"
   spec.description   = "Generates @1x, @2x and @3x images versions of an image for iOS projects"
   spec.homepage      = "https://github.com/emenegro/retinator"
+  spec.requirements << 'You must have ImageMagick or GraphicsMagick installed. Try with `brew install imagemagick` on macOS.'
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
